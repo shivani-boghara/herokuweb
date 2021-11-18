@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>headerlinks}}
+</head>
+
+<body>
+    {{>navbar}}
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="main_content">
+                    <form  class="tempform">
+                        <input type="text" id="cityname" placeholder="enter your city name" autocomplete="off">
+                        <input type="submit" value="search" id="subbtn">
+                    </form>
+                </div>
+                <div class="tempinfo">
+                    <div class="top_layer">
+                        <p id="day"> tuesday</p>
+                        <p id="today_date"> 13 oct</p>
+                    </div>
+                    <div class="main_layer">
+                        <p id="city_name">get output here</p>
+                        <div class="middle_layer data_hide">
+                            <p id="temp"><span id="temprealval">0</span><sup>o</sup>c</p>
+                            <p id="temp_status"><i class="fa fa-cloud"></i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{>footer}}
+    <script src="js/main.js"></script>
+    <script>
+        const getCurrentDay= ()=>{
+            let weekday = new Array(7);
+            weekday[0] = "sun";
+            weekday[1] = "mon";
+            weekday[2] = "tues";
+            weekday[3] = "wed";
+            weekday[4] = "thurs";
+            weekday[5] = "fri";
+            weekday[6] = "sat";
+            let currentTime = new Date;
+            let days = weekday[currentTime.getDay()];
+        const day = document.getElementById('day');
+            day.innerText=days;
+        };
+        getCurrentDay();
+    </script>
+</body>
+
+</html>
