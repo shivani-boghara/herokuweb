@@ -35,6 +35,8 @@
     {{>footer}}
     <script src="js/main.js"></script>
     <script>
+       const curdate = document.getElementById("date");
+
         const getCurrentDay= ()=>{
             let weekday = new Array(7);
             weekday[0] = "sun";
@@ -50,6 +52,8 @@
             day.innerText=days;
         };
         getCurrentDay();
+                 
+ 
     </script>
 </body>
 
