@@ -14,7 +14,7 @@ hbs.registerPartials(partialspath);
 
 app.use(express.static(staticpath));
 
- app.get("",(req,res)=>{
+ app.get("/",(req,res)=>{
      res.render("index")
  })
  app.get("/about",(req,res)=>{
@@ -24,7 +24,7 @@ app.get("/weather",(req,res)=>{
     res.render("weather")
 })
 app.get("*",(req,res)=>{
-    res.render("404errror",{
+    res.render("404error",{
         errormsg: 'opps! page not found'
     })
 })
